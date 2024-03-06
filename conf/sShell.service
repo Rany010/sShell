@@ -1,0 +1,19 @@
+[Unit]
+Description=sShell
+After=syslog.target
+ConditionPathExists=/home/nvidia/code/sShell/start_up.sh
+
+[Service]
+Type=simple
+User=nvidia
+Group=nvidia
+WorkingDirectory=/home/nvidia/code/sShell
+ExecStart=/bin/bash -c "echo \"nvidia\" | sudo -S su -c \"/bin/bash /home/nvidia/code/sShell/start_up.sh >> /home/nvidia/code/sShell/start_up.log 2>&1\""
+TimeoutSec=30
+StandardOutput=tty
+RemainAfterExit=no
+SysVStartPriority=99
+SuccessExitStatus=0
+
+[Install]
+WantedBy=multi-user.target
