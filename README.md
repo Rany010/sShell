@@ -27,8 +27,15 @@ standard shell，一套linux标准shell开发模板
 ## Directory Hierarchy
 ```
 - sShell
+  - basic
+    - conf_utils.sh
+    - echo_utils.sh
+    - json_utils.sh
+  - checker
+    - checker.sh
   - conf
-    - 
+    - sShell.ini
+    - sShell.service
   - install.sh
   - README.md
   - start_up.sh
